@@ -9,4 +9,4 @@ data = pbc.getState()
 for line in data:
 #    print lines
     if re.match(regex, line) is not None:
-        print(line.replace('========',''))
+        print(line.replace('========','').strip())
