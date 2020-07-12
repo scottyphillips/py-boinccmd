@@ -3,7 +3,7 @@ import pyboinccmd as pbc
 import re
 
 
-regex = r'========\s\w*\s========'
+regex = r'========\s\w*\s?\w*?\s========'
 data = pbc.getState()
 for line in data:
 #    print lines
