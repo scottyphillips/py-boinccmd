@@ -5,7 +5,7 @@ import re
 
 regex = r'========\s\w*\s?\w*?\s========'
 
-boinccmd = []
+boinccmd = {}
 category = 'default'
 data = pbc.getState()
 for line in data:
