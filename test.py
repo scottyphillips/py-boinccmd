@@ -15,4 +15,4 @@ for line in data:
         boinccmd[category] = []
         continue
     boinccmd[category].append(line)
-print boinccmd
+print(boinccmd)
