@@ -1,5 +1,11 @@
 import subprocess
+import re
+import json
 
+regex_title = r'========\s\w*\s?\w*?\s========'
+regex_numeric = r'\d\)\s-----------'
+boinccmd = {}
+category = 'default'
 
 def crunchData(array):
     data = array
