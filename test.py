@@ -26,5 +26,6 @@ if "Projects" in boinccmd:
             dict[dict_id] = {}
             continue
         tuple = line.strip().split(':')
-        dict[dict_id][tuple[0]] = tuple[1]
+        print(tuple)
+        # dict[dict_id][tuple[0]] = tuple[1]
     print(dict)
