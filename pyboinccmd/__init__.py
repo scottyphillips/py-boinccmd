@@ -1,7 +1,7 @@
 import subprocess
 
 
-def crunchData(array)
+def crunchData(array):
     data = array
     dict = {}
     dict_id = None
