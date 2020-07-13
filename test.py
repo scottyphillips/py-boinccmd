@@ -35,6 +35,7 @@ if "Projects" in boinccmd:
                   dict[dict_id]['gui'] = {}
               gui_id+=1
               dict[dict_id]['gui'][gui_id] = {}
+              continue
           test_values = ["name", "description", "URL"]
           if any(n in tuple[0] for n in test_values) and gui_id > 0:
               dict[dict_id]['gui'][gui_id][tuple[0]] = tuple[1]
