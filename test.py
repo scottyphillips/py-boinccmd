@@ -19,6 +19,7 @@ if "Projects" in boinccmd:
     data = boinccmd["Projects"]
     dict = {}
     dict_id = None
+    gui_id = 0
     for line in data:
         # if you find a project number create a new dict object
         if re.match(regex_numeric , line) is not None:
@@ -26,6 +27,12 @@ if "Projects" in boinccmd:
             dict[dict_id] = {}
             continue
         tuple = line.strip().split(':', 1)
-        print(tuple)
-        # dict[dict_id][tuple[0]] = tuple[1]
+        # print(tuple)
+        # need a GUI flag so we can handle it properly
+        if len(tuple) == 2:
+          if re.match(r'GUI URL',tuple[0]) is not None:
+              gui_id++
+          if "name" in tuple[0]:
+              print("NAME!!!")
+          dict[dict_id][tuple[0]] = tuple[1]
     print(dict)
