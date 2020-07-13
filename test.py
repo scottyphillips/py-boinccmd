@@ -1,15 +1,11 @@
 #!/usr/bin/env python3
 import pyboinccmd as pbc
-import re
 import json
 
 
-regex_title = r'========\s\w*\s?\w*?\s========'
-regex_numeric = r'\d\)\s-----------'
-boinccmd = {}
-category = 'default'
+
 data = pbc.getState()
-print(data)
+print(json.dumps(data))
 
 # for line in data:
 #    print lines
