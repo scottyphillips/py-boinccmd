@@ -34,11 +34,9 @@ def crunchData(array):
           else:
               try:
                  dict[dict_id][tuple[0].replace(' ','_').replace('\'','').lower()] = tuple[1].strip()
+              # filthy way to deal with Time Stats
               except KeyError:
-                 print("Error found with this tuple!")
-                 print(array)
-                 print(tuple)
-                 quit()
+                 dict[tuple[0].replace(' ','_').replace('\'','').lower()] = tuple[1].strip()
     return dict
 
 """
@@ -60,6 +58,5 @@ def getState(ip_address="127.0.0.1", password=None):
         boinccmd[category].append(line)
     for category in boinccmd.keys():
         crunch = boinccmd[category]
-        print(crunch)
         boinccmd[category] = crunchData(crunch)
     return boinccmd
