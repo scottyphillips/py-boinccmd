@@ -23,7 +23,8 @@ if "Projects" in boinccmd:
         # if you find a project number create a new dict object
         if re.match(regex_numeric , line) is not None:
             dict_id = line.replace(') -----------','')
-            dict[dict_id] = []
+            dict[dict_id] = {}
             continue
-        dict[dict_id].append(line)
+        tuple = line.strip().split(':')
+        dict[dict_id][tuple[0]] = tuple[1]
     print(dict)
