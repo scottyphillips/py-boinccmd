@@ -27,7 +27,7 @@ def crunchData(array):
               dict[dict_id]['gui'][gui_id][tuple[0].replace(' ','_').lower()] = tuple[1].strip()
           else:
               dict[dict_id][tuple[0].replace(' ','_').replace('\'','').lower()] = tuple[1].strip()
-       return dict
+    return dict
 
 """
 getState is equivalent to running 'boinccmd --get_state'
