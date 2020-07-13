@@ -27,12 +27,14 @@ if "Projects" in boinccmd:
             dict[dict_id] = {}
             continue
         tuple = line.strip().split(':', 1)
-        # print(tuple)
-        # need a GUI flag so we can handle it properly
+
         if len(tuple) == 2:
+          # identify if GUI URL is matched and do something about it...
           if re.match(r'GUI URL',tuple[0]) is not None:
               gui_id+=1
-          if "name" in tuple[0]:
-              print("NAME!!!")
-          dict[dict_id][tuple[0]] = tuple[1]
+          test_values = ["name", "description", "URL"]
+          if any(n in tuple[0] for n in test_values) and gui_id > 0:
+              dict[dict_id]['gui'][gui_id][tuple[0]] = tuple[1]
+          else:
+              dict[dict_id][tuple[0]] = tuple[1]
     print(dict)
