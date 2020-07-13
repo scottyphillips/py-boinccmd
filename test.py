@@ -4,7 +4,7 @@ import re
 
 
 regex_title = r'========\s\w*\s?\w*?\s========'
-regex_numeric = r'\d\)\s-----------''
+regex_numeric = r'\d\)\s-----------'
 boinccmd = {}
 category = 'default'
 data = pbc.getState()
