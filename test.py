@@ -41,5 +41,5 @@ if "Projects" in boinccmd:
           if any(n in tuple[0] for n in test_values) and gui_id > 0:
               dict[dict_id]['gui'][gui_id][tuple[0].replace(' ','_'),lower()] = tuple[1].strip()
           else:
-              dict[dict_id][tuple[0].replace(' ','_').replace('/'').lower()] = tuple[1].strip()
+              dict[dict_id][tuple[0].replace(' ','_').replace('\'').lower()] = tuple[1].strip()
     print(json.dumps(dict))
