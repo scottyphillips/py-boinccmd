@@ -16,7 +16,7 @@ for line in data:
         continue
     boinccmd[category].append(line)
 if "Projects" in boinccmd:
-    data = boinccmd["projects"]
+    data = boinccmd["Projects"]
     dict = {}
     dict_id = None
     for line in data:
