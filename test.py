@@ -4,7 +4,7 @@ import json
 
 
 
-data = pbc.getState()
+data = pbc.getState("192.168.1.222","password")
 print(json.dumps(data))
 
 # for line in data:

@@ -47,7 +47,11 @@ engineer the RPC to the BOINC client
 return: an dict containing the properties of the node.
 """
 def getState(ip_address="127.0.0.1", password=None):
-    raw = subprocess.check_output(["boinccmd","--host","192.168.1.222","--passwd","password","--get_state"]).decode('utf-8')
+    raw = None
+    if password is not None:
+       raw = subprocess.check_output(["boinccmd","--host",ip_address,"--passwd",password,"--get_state"]).decode('utf-8')
+   else:
+       raw = subprocess.check_output(["boinccmd","--host",ip_address,"--get_state"]).decode('utf-8')
     data = raw.splitlines()
     for line in data:
     #    print lines
