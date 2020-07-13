@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import pyboinccmd as pbc
 import re
+import json
 
 
 regex_title = r'========\s\w*\s?\w*?\s========'
@@ -41,4 +42,4 @@ if "Projects" in boinccmd:
               dict[dict_id]['gui'][gui_id][tuple[0]] = tuple[1]
           else:
               dict[dict_id][tuple[0]] = tuple[1]
-    print(dict)
+    print(json.dumps(dict))
