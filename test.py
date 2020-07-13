@@ -31,7 +31,7 @@ if "Projects" in boinccmd:
         # need a GUI flag so we can handle it properly
         if len(tuple) == 2:
           if re.match(r'GUI URL',tuple[0]) is not None:
-              gui_id++
+              gui_id+=1
           if "name" in tuple[0]:
               print("NAME!!!")
           dict[dict_id][tuple[0]] = tuple[1]
