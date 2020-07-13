@@ -36,7 +36,9 @@ def crunchData(array):
                  dict[dict_id][tuple[0].replace(' ','_').replace('\'','').lower()] = tuple[1].strip()
               except KeyError:
                  print("Error found with this tuple!")
+                 print(array)
                  print(tuple)
+                 quit()
     return dict
 
 """
