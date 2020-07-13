@@ -31,6 +31,8 @@ if "Projects" in boinccmd:
         if len(tuple) == 2:
           # identify if GUI URL is matched and do something about it...
           if re.match(r'GUI URL',tuple[0]) is not None:
+              if gui_id == 0:
+                  dict[dict_id]['gui'] = {}
               gui_id+=1
           test_values = ["name", "description", "URL"]
           if any(n in tuple[0] for n in test_values) and gui_id > 0:
