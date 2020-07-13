@@ -34,7 +34,7 @@ def crunchData(array):
           else:
               try:
                  dict[dict_id][tuple[0].replace(' ','_').replace('\'','').lower()] = tuple[1].strip()
-              # filthy way to deal with Time Stats
+              # filthy way to deal with Time Stats which unlike the other catergories is unnumbered...
               except KeyError:
                  dict[tuple[0].replace(' ','_').replace('\'','').lower()] = tuple[1].strip()
     return dict
@@ -52,7 +52,7 @@ def getState(ip_address="127.0.0.1", password=None):
     for line in data:
     #    print lines
         if re.match(regex_title , line) is not None:
-            category = line.replace('========','').strip().replace(' ','_')
+            category = line.replace('========','').strip().replace(' ','_').lower()
             boinccmd[category] = []
             continue
         boinccmd[category].append(line)
