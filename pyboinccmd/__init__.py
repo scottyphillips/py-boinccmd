@@ -53,5 +53,7 @@ def getState(ip_address="127.0.0.1", password=None):
             continue
         boinccmd[category].append(line)
     for category in boinccmd.keys():
-        boinccmd[category] = crunchData(boinccmd[category])
+        crunch = boinccmd[category]
+        print(crunch)
+        boinccmd[category] = crunchData(crunch)
     return boinccmd
